@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Netology Test</string>
+    <string name="learn_actual_topics">Изучайте актуальные темы</string>
+    <string name="learn">Изучайте</string>
+    <string name="actual_topics">актуальные темы</string>
+    <string name="status_error">Ошибка, попробуйте позже</string>
+    <string name="courses">%d курсов</string>
+
+</resources>

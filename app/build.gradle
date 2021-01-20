@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.malomnogo.netologytest"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "BASE_URL", "\"https://gitcdn.link/\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation libraries.kotlinStdLib
+    implementation libraries.coreKtx
+
+    implementation libraries.appCompat
+    implementation libraries.material
+    implementation libraries.recyclerView
+    implementation libraries.cardView
+    implementation libraries.constraintLayout
+
+    implementation libraries.lifecycleViewModelKtx
+    implementation libraries.lifecycleLiveDataKtx
+    implementation libraries.lifecycleRuntime
+    implementation libraries.lifecycleCompiler
+
+    implementation libraries.koinCore
+    implementation libraries.koinAndroid
+    implementation libraries.koinViewModel
+    implementation libraries.koinTest
+
+    implementation libraries.retrofit
+    implementation libraries.retrofitConverterGson
+    implementation libraries.okhttp
+    implementation libraries.okhttpLoggingInterceptor
+
+    implementation libraries.gson
+
+    implementation libraries.navigationFragment
+    implementation libraries.navigationUi
+
+    implementation libraries.rxJava
+    implementation libraries.rxAndroid
+    implementation libraries.retrofitAdapterRx
+
+    testImplementation libraries.junit
+    androidTestImplementation libraries.junitExtention
+    androidTestImplementation libraries.espresso
+}
