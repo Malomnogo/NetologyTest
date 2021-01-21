@@ -34,7 +34,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun initUi(listNetologyData: List<NetologyUiData>) {
-
         with(fragment_main_rv_main_data) {
             adapter = MainAdapter(listNetologyData)
         }
