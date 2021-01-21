@@ -21,14 +21,11 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun handleStatus(status: Status?) {
+        fragment_main_pb.visibility = View.GONE
+
         when (status) {
-            Status.ERROR -> {
-                fragment_main_pb.visibility = View.GONE
-                showErrorResult(getString(R.string.status_error))
-            }
-            else -> {
-                fragment_main_pb.visibility = View.GONE
-            }
+            Status.ERROR -> showErrorResult(getString(R.string.status_error))
+            else -> { /*do nothing */ }
         }
     }
 
@@ -37,7 +34,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun initUi(listNetologyData: List<NetologyUiData>) {
-        fragment_main_rv_main_data.apply {
+        with(fragment_main_rv_main_data) {
             adapter = MainAdapter(listNetologyData)
         }
     }
